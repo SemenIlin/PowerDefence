@@ -25,6 +25,9 @@ public class GameScenario : ScriptableObject
 
         public bool Progress()
         {
+            if (_scenario == null)
+                return false;
+
             float deltaTime = _wave.Progress(Time.deltaTime);
             while(deltaTime >= 0f)
             {
